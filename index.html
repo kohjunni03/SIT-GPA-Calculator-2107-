@@ -131,6 +131,9 @@ const newModule = lastModule.cloneNode(true);
 const moduleCount = container.children.length;
 const moduleHeading = newModule.querySelector("h2");
 moduleHeading.textContent = "Module " + (moduleCount + 1);
+newModule.querySelector('input[type="text"]').value = "";
+newModule.querySelector('input[type="number"]').value = "";
+newModule.querySelector("select").value = "";
 container.appendChild(newModule);
 });
 </script>
