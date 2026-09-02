@@ -137,5 +137,16 @@ newModule.querySelector("select").value = "";
 container.appendChild(newModule);
 });
 </script>
+
+<script>
+document.getElementById("Removebutton").addEventListener("click", function () {
+const container = document.getElementById("moduleContainer");
+const moduleCount = container.children.length;
+const lastModule = container.lastElementChild;
+if (moduleCount>5) {
+last module.remove();
+}
+});
+</script>
 </body>
 </html>
