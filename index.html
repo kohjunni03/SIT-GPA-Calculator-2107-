@@ -8,6 +8,7 @@
 <p>Student ID: XXX2107</p>
 <p>Enter your modules, credit units and grades to calculate your SIT GPA and view your degree classification.</p>
 <div>
+<div id="moduleContainer">
 <h2>Module 1</h2>
 Module Name:
 <input type="text">
@@ -117,7 +118,13 @@ Grade:
     <option value="F">F</option>
 </select>
 </div>
-<button>Add Module</button>
-<button>Remove Module</button>
+<button id="Addbutton">Add Module</button>
+<button id="Removebutton">Remove Module</button>
+
+<script>
+document.getElementById("Addbutton").addEventListener("click", function () {
+alert("Button works!");
+});
+</script>
 </body>
 </html>
