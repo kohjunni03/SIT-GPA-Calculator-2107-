@@ -148,5 +148,39 @@ lastModule.remove();
 }
 });
 </script>
+
+<button id="Calculatebutton">Calculate GPA</button>
+<p id="GPAresult">GPA: </p>
+<p id="Classificationresult">Degree Classification: </p>
+
+<script>
+document.getElementById("Calculatebutton").addEventListener("click", function () {
+    const container = document.getElementById("moduleContainer");
+    const modules = container.children;
+    let totalCredits = 0;
+    let totalWeightedPoints = 0;
+const gradePoints = {
+    "A+": 5.00,
+    "A": 5.00,
+    "A-": 4.50,
+    "B+": 4.00,
+    "B": 3.50,
+    "B-": 3.00,
+    "C+": 2.50,
+    "C": 2.00,
+    "D+": 1.50,
+    "D": 1.00,
+    "F": 0.00,
+};
+    for (const module of modules) {
+const creditUnits = parseFloat( module.querySelector('input[type="number"]').value );
+const grade = module.querySelector("select").value
+const point = gradePoints[grade];
+totalCredits += creditUnits;
+totalWeightedPoints += point * creditUnits;
+}
+});
+</script>
+
 </body>
 </html>
