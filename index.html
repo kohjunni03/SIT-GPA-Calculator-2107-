@@ -128,6 +128,9 @@ document.getElementById("Addbutton").addEventListener("click", function () {
 const container = document.getElementById("moduleContainer");
 const lastModule = container.lastElementChild;
 const newModule = lastModule.cloneNode(true);
+const moduleCount = container.children.length;
+const moduleHeading = newModule.querySelector("h2");
+moduleHeading.textContent = "Module " + (moduleCount + 1);
 container.appendChild(newModule);
 });
 </script>
