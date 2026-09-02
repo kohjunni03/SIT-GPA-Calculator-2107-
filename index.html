@@ -9,6 +9,7 @@
 <p>Enter your modules, credit units and grades to calculate your SIT GPA and view your degree classification.</p>
 <div>
 <div id="moduleContainer">
+<div>
 <h2>Module 1</h2>
 Module Name:
 <input type="text">
@@ -118,12 +119,16 @@ Grade:
     <option value="F">F</option>
 </select>
 </div>
+</div>  
 <button id="Addbutton">Add Module</button>
 <button id="Removebutton">Remove Module</button>
 
 <script>
 document.getElementById("Addbutton").addEventListener("click", function () {
-alert("Button works!");
+const container = document.getElementById("moduleContainer");
+const lastModule = container.lastElementChild;
+const newModule = lastModule.cloneNode(true);
+container.appendChild(newModule);
 });
 </script>
 </body>
