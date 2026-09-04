@@ -174,11 +174,13 @@ const gradePoints = {
 };
     for (const module of modules) {
 const creditUnits = parseFloat( module.querySelector('input[type="number"]').value );
-const grade = module.querySelector("select").value
+const grade = module.querySelector("select").value;
 const point = gradePoints[grade];
 totalCredits += creditUnits;
 totalWeightedPoints += point * creditUnits;
 }
+const gpa = totalWeightedPoints / totalCredits;
+document.getElementById("GPAresult").textContent = "GPA:" + gpa;
 });
 </script>
 
