@@ -176,6 +176,10 @@ const gradePoints = {
 const creditUnits = parseFloat( module.querySelector('input[type="number"]').value );
 const grade = module.querySelector("select").value;
 const point = gradePoints[grade];
+if (Number.isNaN(creditUnits) || grade === "") {
+    alert("Please complete all module fields.");
+    return;
+}
 totalCredits += creditUnits;
 totalWeightedPoints += point * creditUnits;
 }
