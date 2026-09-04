@@ -180,7 +180,24 @@ totalCredits += creditUnits;
 totalWeightedPoints += point * creditUnits;
 }
 const gpa = totalWeightedPoints / totalCredits;
-document.getElementById("GPAresult").textContent = "GPA:" + gpa;
+let classification = "";
+if (gpa >= 4.50) {
+    classification = "Honours with highest distinction";
+}
+else if (gpa >= 4.00) {
+    classification = "Honours with distinction";
+}
+else if (gpa >= 3.50) {
+    classification = "Honours with merit";
+}
+else if (gpa >= 3.00) {
+    classification = "Honours";
+}
+else {
+    classification = "Pass";
+}
+document.getElementById("GPAresult").textContent = "GPA:" + gpa.toFixed(2);
+document.getElementById("Classificationresult").textContent = "Degree Classification: " + classification;
 });
 </script>
 
